@@ -48,7 +48,7 @@ int main(int argc, char * argv[]) {
 
     printf("Opening Window...\n");
 
-    glViewport(0, 0, 800, 600);
+    glViewport(0, 0, mWidth, mHeight);
 
     // build and compile our shader program
     // ------------------------------------
@@ -117,6 +117,7 @@ int main(int argc, char * argv[]) {
     // VAOs requires a call to glBindVertexArray anyways so we generally don't unbind VAOs (nor VBOs) when it's not directly necessary.
     glBindVertexArray(0); 
 
+    glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
 
     // Rendering Loop
     while (glfwWindowShouldClose(mWindow) == false) {
